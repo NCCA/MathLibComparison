@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.9)
 # Name of the project
-project(VectorComparison)
+project(MathLibCompare)
 #Bring the headers into the project (local ones)
 include_directories(include)
 
@@ -25,6 +25,6 @@ find_package(Qt5OpenGL)
 
 # add exe and link libs this must be after the other defines
 add_executable(VectorComparison ${SOURCES})
-target_link_libraries(VectorComparison ${PROJECT_LINK_LIBS} )
-target_link_libraries(VectorComparison Qt5::OpenGL)
+target_link_libraries(MathLibCompare ${PROJECT_LINK_LIBS} )
+target_link_libraries(MathLibCompare Qt5::OpenGL)
 
