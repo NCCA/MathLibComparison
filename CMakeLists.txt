@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 2.8.11)
 # Name of the project
 project(MathLibCompare)
 #Bring the headers into the project (local ones)
@@ -10,6 +10,9 @@ file(GLOB SOURCES "src/*.cpp")
 # see what platform we are on and set platform defines
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 	add_definitions(-DDARWIN)
+
+elif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+	add_definitions(-DLINUX)
 endif()
 
 
@@ -24,7 +27,7 @@ add_definitions(-DQT5BUILD)
 find_package(Qt5OpenGL)
 
 # add exe and link libs this must be after the other defines
-add_executable(VectorComparison ${SOURCES})
-target_link_libraries(MathLibCompare ${PROJECT_LINK_LIBS} )
+add_executable(MathLibCompare ${SOURCES})
 target_link_libraries(MathLibCompare Qt5::OpenGL)
+target_link_libraries(MathLibCompare ${PROJECT_LINK_LIBS} )
 
