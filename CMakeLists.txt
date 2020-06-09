@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.11)
+cmake_minimum_required(VERSION 3.2)
 # Name of the project
 project(MathLibCompare)
 #Bring the headers into the project (local ones)
@@ -6,14 +6,6 @@ include_directories(include)
 
 #the file(GLOB...) allows for wildcard additions of our src dir
 file(GLOB SOURCES "src/*.cpp")
-
-# see what platform we are on and set platform defines
-if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-	add_definitions(-DDARWIN)
-
-elif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-	add_definitions(-DLINUX)
-endif()
 
 
 
