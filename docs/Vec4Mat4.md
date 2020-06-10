@@ -19,3 +19,16 @@ All classes can be constructed with x,y,z,w parameters, only NGL allows x,y,z an
 A mixed bag for accessors, NGL,glm and IMath have public attributes for x,y,z,w (ngl coding standard uses m_ as a prefix for all methods). Eigen and QVector4D use methods and public access is not available. 
 
 ## Mutators
+
+As with the previous accessors NGL,glm and IMath have public access to members. QVector4D uses the standard Qt model of ```setX/Y/Z/W```. Perhaps the most interesting approach is from Eigen which uses overloaded ```<< and , operators``` as shown below
+
+```
+auto eigenV4=Eigen::Vector4f();
+eigenV4<<1.0f,2.0f,3.0f,4.0f;
+```
+
+## Subscript operators 
+
+All of the classes allow subscript access to the methods, if writing code to target / change which library you are going to use I would suggest this is the best way of getting to the attributes.
+
+Note glm and Eigen will throw abort is subscript is out of range, NGL if compiled as debug will also do this. Other classes just seem to ignore.
