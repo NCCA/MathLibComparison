@@ -10,5 +10,8 @@ int main()
    mutatorVec4();
    subscriptVec4();
    copyConstruction();
+   // maths
+   addition();
+   subtraction();
    return EXIT_SUCCESS;
 }

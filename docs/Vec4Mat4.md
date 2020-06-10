@@ -38,3 +38,14 @@ eigenV4<<1.0f,2.0f,3.0f,4.0f;
 All of the classes allow subscript access to the methods, if writing code to target / change which library you are going to use I would suggest this is the best way of getting to the attributes.
 
 Note glm and Eigen will throw abort is subscript is out of range, NGL if compiled as debug will also do this. Other classes just seem to ignore.
+
+# Basic Maths
+
+## Addition
+
+The addition works as expected with overloaded + operator returning a new Vec4 type. All of the libraries except NGL do component wise addition so w+w is done.
+
+In the case of NGL I made the design decision (due to experience with students making errors with the addition) of not adding the w components and always using the Left Hand size w component in the returned value. Whilst most of the time I use Vec3 anyway It may be worth changing this for later versions of NGL to be compatible.
+
+## Subtraction
+

@@ -11,6 +11,7 @@
 #include <glm/gtx/string_cast.hpp>
 #include <type_traits>
 #include <ngl/fmt/format.h>
+// in Construction.cpp
 extern void defaultConstructVec4();
 extern void singleParamConstructVec4();
 extern void multipleParamConstructVec4();
@@ -18,6 +19,11 @@ extern void accesorsVec4();
 extern void mutatorVec4();
 extern void subscriptVec4();
 extern void copyConstruction();
+
+// in Math.cpp
+extern void addition();
+extern void subtraction();
+
 
 template <class T>
 void print(const char *msg,T type) 
