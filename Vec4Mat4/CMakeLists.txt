@@ -46,6 +46,10 @@ add_definitions(-DGLM_ENABLE_EXPERIMENTAL)
 #the file(GLOB...) allows for wildcard additions of our src dir
 set(SOURCES 
 			${PROJECT_SOURCE_DIR}/Vec4Mat4.cpp  
+			${PROJECT_SOURCE_DIR}/Construction.cpp  
+			${PROJECT_SOURCE_DIR}/Math.cpp  
+			${PROJECT_SOURCE_DIR}/Functions.h  
+
 )
 
 # see what platform we are on and set platform defines
