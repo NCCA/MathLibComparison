@@ -12,15 +12,15 @@
 template <class T>
 void print(const char *msg,T type) 
 {
-   if constexpr(std::is_same_v<decltype(type), ngl::Vec4> || std::is_same_v<decltype(type), Eigen::Vector4f> || std::is_same_v<decltype(type),Imath::Vec4<float>>) 
+   if constexpr(std::is_same_v<T, ngl::Vec4> || std::is_same_v<T, Eigen::Vector4f> || std::is_same_v<T,Imath::Vec4<float>>) 
    {
       std::cout<<msg<<" ["<<type<<"]\n";
    } 
-   else if constexpr(std::is_same_v<decltype(type),glm::vec4>)
+   else if constexpr(std::is_same_v<T,glm::vec4>)
    {
       std::cout<<msg<<" ["<<glm::to_string(type)<<"]\n";
    }
-   else if constexpr(std::is_same_v<decltype(type),QVector4D>)
+   else if constexpr(std::is_same_v<T,QVector4D>)
    {
       std::cout<<msg<<" ["<<type[0]<<','<<type[1]<<','<<type[2]<<','<<type[3]<<"]\n";
    }
@@ -34,6 +34,7 @@ void multipleParamConstructVec4();
 void accesorsVec4();
 void mutatorVec4();
 void subscriptVec4();
+void copyConstruction();
 
 
 int main()
@@ -44,6 +45,7 @@ int main()
    accesorsVec4();
    mutatorVec4();
    subscriptVec4();
+   copyConstruction();
    return EXIT_SUCCESS;
 }
 
@@ -223,5 +225,55 @@ void subscriptVec4()
 //   glmVec4[5]=4.0f;
 //   eigenV4[5]=1.0f;
 //   nglV4[5]=4.0f;
+
+}
+
+void copyConstruction()
+{
+  std::cout<<"********************************************\n";
+  std::cout<<"copy construction \n";
+  std::cout<<"********************************************\n";
+
+   {
+      ngl::Vec4 a(1,2,3,4);
+      auto b=a;
+      auto c(b);
+      print("ngl::Vec4 a(1,2,3,4)",a);
+      print("auto b=a;",b);
+      print("auto c(b)",c);
+   }
+   {
+      Eigen::Vector4f a(1,2,3,4);
+      auto b=a;
+      auto c(b);
+      print("Eigen::Vector4f a(1,2,3,4)",a);
+      print("auto b=a;",b);
+      print("auto c(b)",c);
+   }
+   {
+      glm::vec4 a(1,2,3,4);
+      auto b=a;
+      auto c(b);
+      print("glm::vec4 a(1,2,3,4)",a);
+      print("auto b=a;",b);
+      print("auto c(b)",c);
+   }
+   {
+      Imath::Vec4<float> a(1,2,3,4);
+      auto b=a;
+      auto c(b);
+      print("Imath::Vec4<float> a(1,2,3,4)",a);
+      print("auto b=a;",b);
+      print("auto c(b)",c);
+   }
+   {
+      QVector4D a(1,2,3,4);
+      auto b=a;
+      auto c(b);
+      print("QVector4D a(1,2,3,4)",a);
+      print("auto b=a;",b);
+      print("auto c(b)",c);
+   }
+
 
 }

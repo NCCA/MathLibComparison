@@ -14,6 +14,12 @@ Only Imath, NGL and glm allow the construction with a single parameter, again NG
 
 All classes can be constructed with x,y,z,w parameters, only NGL allows x,y,z and has w defaulted to 1.0f.
 
+All copy constructors work as expected with both forms
+```
+a=b;
+c(b);
+```
+
 ## Accessors
 
 A mixed bag for accessors, NGL,glm and IMath have public attributes for x,y,z,w (ngl coding standard uses m_ as a prefix for all methods). Eigen and QVector4D use methods and public access is not available. 
