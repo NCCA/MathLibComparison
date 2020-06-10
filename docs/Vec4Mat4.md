@@ -41,11 +41,17 @@ Note glm and Eigen will throw abort is subscript is out of range, NGL if compile
 
 # Basic Maths
 
-## Addition
+## Addition / Subtraction
 
-The addition works as expected with overloaded + operator returning a new Vec4 type. All of the libraries except NGL do component wise addition so w+w is done.
+The addition and subtraction works as expected with overloaded +/- operator returning a new Vec4 type. All of the libraries except NGL do component wise addition / subtraction so w(+/-)w is done.
 
-In the case of NGL I made the design decision (due to experience with students making errors with the addition) of not adding the w components and always using the Left Hand size w component in the returned value. Whilst most of the time I use Vec3 anyway It may be worth changing this for later versions of NGL to be compatible.
+In the case of NGL I made the design decision (due to experience with students making errors with the operation) of not adding the w components and always using the Left Hand side w component in the returned value. Whilst most of the time I use Vec3 anyway It may be worth changing this for later versions of NGL to be compatible with other libs.
 
-## Subtraction
+The same is true for the += and -= operators.
+
+## Multiplication and Division
+
+Both work as expected, as with addition the w component with NGL remains the same as the Left hand side.
+
+In all cases division by zero seems to just set values to inf, I've 
 

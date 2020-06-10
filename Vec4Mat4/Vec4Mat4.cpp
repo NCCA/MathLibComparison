@@ -13,5 +13,10 @@ int main()
    // maths
    addition();
    subtraction();
+   plusEquals();
+   minusEquals();
+   multScalar();
+   divScalar();
+   divZero();
    return EXIT_SUCCESS;
 }

@@ -42,6 +42,7 @@ add_definitions(-DUSEOIIO)
 add_definitions(-DFMT_HEADER_ONLY)
 add_definitions(-DUSEGLM)
 add_definitions(-DGLM_ENABLE_EXPERIMENTAL)
+add_compile_options(-ffast-math )
 
 #the file(GLOB...) allows for wildcard additions of our src dir
 set(SOURCES 
@@ -83,7 +84,6 @@ endif()
 # now add NGL specific values
 # add exe and link libs that must be after the other defines
 add_executable(Vec4Mat4 ${SOURCES})
-
 link_directories( ${NGLROOT}/lib )
 find_package(glfw3 CONFIG REQUIRED)
 target_link_libraries(Vec4Mat4 PRIVATE glfw PRIVATE GTest::gtest Qt5::Widgets )

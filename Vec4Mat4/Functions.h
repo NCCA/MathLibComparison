@@ -23,10 +23,15 @@ extern void copyConstruction();
 // in Math.cpp
 extern void addition();
 extern void subtraction();
+extern void plusEquals();
+extern void minusEquals();
+extern void multScalar();
+extern void divScalar();
+extern void divZero();
 
 
 template <class T>
-void print(const char *msg,T type) 
+void print(const char *msg,const T &type) 
 {
    if constexpr(std::is_same_v<T, ngl::Vec4> || std::is_same_v<T, Eigen::Vector4f> || std::is_same_v<T,Imath::Vec4<float>>) 
    {
