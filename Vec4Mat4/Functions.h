@@ -1,5 +1,5 @@
 #ifndef FUNCTIONS_H_
-#define FUNCTIONS_h_
+#define FUNCTIONS_H_
 
 #include <ngl/Vec4.h>
 #include <ngl/Mat4.h>
@@ -10,7 +10,7 @@
 #include <QVector4D>
 #include <glm/gtx/string_cast.hpp>
 #include <type_traits>
-#include <ngl/fmt/format.h>
+#include <fmt/format.h>
 // in Construction.cpp
 extern void defaultConstructVec4();
 extern void singleParamConstructVec4();
